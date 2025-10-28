@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Modulux Visible Stock Threshold\n"
 "Report-Msgid-Bugs-To: https://github.com/moduluxnet/modulux-visible-stock-threshold/issues\n"
-"POT-Creation-Date: 2025-08-27 16:12+0300\n"
+"POT-Creation-Date: 2025-10-01 19:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Modulux.net <hello@modulux.net>\n"
 "Language-Team: modulux.net\n"
@@ -17,152 +17,152 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: modulux-visible-stock-threshold.php:91
+#: modulux-visible-stock-threshold.php:85
 msgid "requires WooCommerce to be active."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:110
-#: modulux-visible-stock-threshold.php:111
-#: modulux-visible-stock-threshold.php:166
-#: modulux-visible-stock-threshold.php:185
-#: modulux-visible-stock-threshold.php:196
-#: modulux-visible-stock-threshold.php:257
+#: modulux-visible-stock-threshold.php:104
+#: modulux-visible-stock-threshold.php:105
+#: modulux-visible-stock-threshold.php:161
+#: modulux-visible-stock-threshold.php:182
+#: modulux-visible-stock-threshold.php:194
+#: modulux-visible-stock-threshold.php:243
 msgid "Visible Stock Threshold"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:121
+#: modulux-visible-stock-threshold.php:116
 msgid "General Settings"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:123
+#: modulux-visible-stock-threshold.php:118
 msgid "Enable"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:126
+#: modulux-visible-stock-threshold.php:121
 msgid "Activate threshold logic on storefront"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:129
+#: modulux-visible-stock-threshold.php:124
 msgid "Strict Mode"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:132
+#: modulux-visible-stock-threshold.php:127
 msgid "If real stock ≤ threshold, mark product out of stock (not purchasable)."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:135
+#: modulux-visible-stock-threshold.php:130
 msgid "Default Threshold"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:138
+#: modulux-visible-stock-threshold.php:133
 msgid "Used if no product / category / role override is set."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:141
-#: modulux-visible-stock-threshold.php:309
+#: modulux-visible-stock-threshold.php:136
+#: modulux-visible-stock-threshold.php:295
 msgid "Availability Text"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:143
-#: modulux-visible-stock-threshold.php:609
+#: modulux-visible-stock-threshold.php:138
+#: modulux-visible-stock-threshold.php:597
 msgid "Only {qty} left in stock"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:144
+#: modulux-visible-stock-threshold.php:139
 msgid "Use {qty} placeholder. Example: \"Only {qty} left in stock\""
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:147
+#: modulux-visible-stock-threshold.php:142
 msgid "Role Overrides"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:150
+#: modulux-visible-stock-threshold.php:145
 msgid "Role"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:150
+#: modulux-visible-stock-threshold.php:145
 msgid "Threshold"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:157
+#: modulux-visible-stock-threshold.php:152
 msgid "If set, applies when current user has that role (product override wins, then role, then category, then global)."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:167
+#: modulux-visible-stock-threshold.php:162
 msgid "If set: when real stock ≤ threshold, product is out of stock (strict mode). When real stock > threshold, only threshold is visible & purchasable."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:187
+#: modulux-visible-stock-threshold.php:184
 msgid "Used if product has no override; role can still override; falls back to global default."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:199
+#: modulux-visible-stock-threshold.php:197
 msgid "Leave empty to not set at category level."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:262
+#: modulux-visible-stock-threshold.php:248
 msgid "Settings"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:266
+#: modulux-visible-stock-threshold.php:252
 msgid "About"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:273
+#: modulux-visible-stock-threshold.php:259
 msgid "About Modulux Visible Stock Threshold"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:276
+#: modulux-visible-stock-threshold.php:262
 msgid "Cap the visible stock and max purchasable quantity using global, category, role, or per-product thresholds. In Strict Mode, products become Out of Stock when real stock is less than or equal to the threshold."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:279
+#: modulux-visible-stock-threshold.php:265
 msgid "How it works"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:281
+#: modulux-visible-stock-threshold.php:267
 msgid "If real stock is greater than the threshold, customers see and can buy at most the threshold."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:282
+#: modulux-visible-stock-threshold.php:268
 msgid "If Strict Mode is enabled and real stock is less than or equal to the threshold, the product is Out of Stock."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:283
+#: modulux-visible-stock-threshold.php:269
 msgid "Priority: Product > Role override > Highest Category threshold > Global default."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:286
+#: modulux-visible-stock-threshold.php:272
 msgid "Filters (Hooks)"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:298
+#: modulux-visible-stock-threshold.php:284
 msgid "Example: 3 for guests, 10 for customers"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:310
+#: modulux-visible-stock-threshold.php:296
 msgid "Use the {qty} placeholder, e.g., \"Only {qty} left in stock\"."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:314
+#: modulux-visible-stock-threshold.php:300
 msgid "Support"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:316
+#: modulux-visible-stock-threshold.php:302
 msgid "Author"
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:513
-#: modulux-visible-stock-threshold.php:557
+#: modulux-visible-stock-threshold.php:499
+#: modulux-visible-stock-threshold.php:544
 msgid "This product is currently out of stock."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:531
-#: modulux-visible-stock-threshold.php:577
+#: modulux-visible-stock-threshold.php:518
+#: modulux-visible-stock-threshold.php:565
 #, php-format
 msgid "You can purchase a maximum of %d for this product."
 msgstr ""
 
-#: modulux-visible-stock-threshold.php:602
+#: modulux-visible-stock-threshold.php:590
 msgid "Out of stock"
 msgstr ""

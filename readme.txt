@@ -1,5 +1,5 @@
-=== Modulux Visible Stock Threshold ===
-Contributors: modulux, sgeray
+=== Modulux Visible Stock Threshold for WooCommerce ===
+Contributors: modulux
 Donate link: https://modulux.net
 Tags: woocommerce, threshold, out of stock, availability, role based
 Requires at least: 5.8
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Show a capped “visible stock” and limit purchase quantity using global / category / role / per-product thresholds. Strict Mode can auto-mark items as Out of Stock when real stock ≤ threshold.
+Show a capped "visible stock" and limit purchase quantities based on global, category, role, or product thresholds. Strict Mode is supported.
 
 == Description ==
 

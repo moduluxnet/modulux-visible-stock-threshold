@@ -1,4 +1,4 @@
-# Modulux Visible Stock Threshold
+# Modulux Visible Stock Threshold for WooCommerce
 
 > WooCommerce addon to cap **visible stock** and **max purchasable quantity** using global / category / role / per-product thresholds. Optional **Strict Mode** marks items Out of Stock when real stock ≤ threshold.
 

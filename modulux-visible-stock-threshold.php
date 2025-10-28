@@ -1,6 +1,7 @@
 <?php
 /**
- * Plugin Name:  Modulux Visible Stock Threshold
+ * Plugin Name:  Modulux Visible Stock Threshold for WooCommerce
+ * Plugin URI:   https://wordpress.org/plugins/modulux-visible-stock-threshold
  * Description:  Show a capped "visible stock" and limit purchase quantity using global / category / role / per-product thresholds. Strict Mode can mark stock ≤ threshold as Out of Stock. Includes customizable "Only {qty} left" message.
  * Version:      1.0.0
  * Author:       Modulux
@@ -28,8 +29,6 @@ final class Modulux_VST {
     }
 
     private function __construct() {
-        // Load text domain and defaults at the right time (avoid _load_textdomain_just_in_time warning)
-        //add_action('init', [$this, 'load_textdomain']);
         add_action('init', [$this, 'init_defaults']);
 
         // Woo check bootstrap
@@ -65,10 +64,6 @@ final class Modulux_VST {
         delete_option(self::OPT_KEY);
         // keep post/term meta by design
     }
-
-    /*public function load_textdomain() {
-        load_plugin_textdomain('modulux-visible-stock-threshold', false, dirname(plugin_basename(__FILE__)) . '/languages');
-    }*/
 
     public function init_defaults() {
         $defaults = [
@@ -176,7 +171,7 @@ final class Modulux_VST {
         });
 
         add_action('woocommerce_process_product_meta', function($post_id){
-            if ( isset( $_POST[self::META_KEY] ) && isset( $_POST['_modulux_vst_nonce'] ) && wp_verify_nonce( sanitize_text_field(wp_unslash($_POST['_modulux_vst_nonce'])), 'modulux_vst_save' ) ) {
+            if ( isset( $_POST[self::META_KEY] ) && isset( $_POST['_modulux_vst_term_nonce'] ) && wp_verify_nonce( sanitize_text_field(wp_unslash($_POST['_modulux_vst_term_nonce'])), 'modulux_vst_term_save' ) ) {
                 update_post_meta($post_id, self::META_KEY, sanitize_text_field(wp_unslash($_POST[self::META_KEY])));
             }
         });
@@ -212,7 +207,7 @@ final class Modulux_VST {
     } 
 
     public function save_term_meta($term_id) {
-        if (isset($_POST[self::TERM_META_KEY]) && isset( $_POST['_modulux_vst_nonce'] ) && wp_verify_nonce( sanitize_text_field(wp_unslash($_POST['_modulux_vst_nonce'])), 'modulux_vst_save' )) {
+        if (isset($_POST[self::TERM_META_KEY]) && isset( $_POST['_modulux_vst_term_nonce'] ) && wp_verify_nonce( sanitize_text_field(wp_unslash($_POST['_modulux_vst_term_nonce'])), 'modulux_vst_term_save' )) {
             $val = sanitize_text_field(wp_unslash($_POST[self::TERM_META_KEY]));
             if ($val === '' || $val === null) {
                 delete_term_meta($term_id, self::TERM_META_KEY);
@@ -238,22 +233,9 @@ final class Modulux_VST {
         return $out;
     }
 
-    /*public function render_settings() {
-        ?>
-        <div class="wrap">
-            <h1><?php esc_html_e('Visible Stock Threshold', 'modulux-visible-stock-threshold'); ?></h1>
-            <form method="post" action="options.php">
-                <?php
-                settings_fields('modulux_vst_group');
-                do_settings_sections('modulux_vst');
-                submit_button();
-                ?>
-            </form>
-        </div>
-        <?php
-    }*/
-
     public function render_settings() {
+        
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only reading tab for UI, no action taken
         $active = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'general';
         $base   = admin_url('admin.php?page=modulux-vst');
 
@@ -316,7 +298,7 @@ final class Modulux_VST {
                         </p>
 
                         <p>
-                            <a href="https://wordpress.org/support/plugin/" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Support', 'modulux-visible-stock-threshold'); ?></a>
+                            <a href="https://wordpress.org/plugins/modulux-visible-stock-threshold" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Support', 'modulux-visible-stock-threshold'); ?></a>
                             &nbsp;|&nbsp;
                             <a href="https://modulux.net" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Author', 'modulux-visible-stock-threshold'); ?></a>
                         </p>
